@@ -69,6 +69,10 @@ describe Spotlight::Resources::IiifManifest do
         expect(subject.to_solr['readonly_attribution_tesim']).to eq ['Attribution Data']
       end
 
+      it 'indexes both forms' do
+        expect(subject.to_solr['attribution_ssim']).to eq ['Attribution Data']
+      end
+
       it 'includes the top-level description' do
         expect(subject.to_solr['readonly_description_tesim']).to eq ['A test IIIF manifest']
       end
